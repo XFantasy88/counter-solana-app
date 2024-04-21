@@ -7,7 +7,7 @@ export default function Events() {
     queryKey: ["events"],
     queryFn: async () => {
       try {
-        const data = await fetch("http://localhost:8000/api").then((res) =>
+        const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api`).then((res) =>
           res.json()
         )
         return data
